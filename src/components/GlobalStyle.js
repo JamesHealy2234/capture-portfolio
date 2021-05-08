@@ -8,9 +8,17 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    // all html styles
+   html{
+        @media(max-width: 1700px){
+            font-size: 70%;
+        }
+    }
+
     body{
         background: #1b1b1b;
         font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
     }
 
     p{

@@ -9,13 +9,21 @@ import home2 from '../img/home2.png';
 
 import styled from "styled-components"
 
+//TEST
+
 
 import {About, Description, Image, Hide} from '../styles';
 
-const ServicesSection = () =>{
 
+import {scrollReveal} from "../animation";
+import useScroll from './useScroll';
+
+const ServicesSection = () =>{
+    const [element, controls] = useScroll();
+    
     return(
-        <Services>
+        //have to pass in the animate controls 
+        <Services variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <h2>high <span>quality</span> servies</h2>
                 <Cards>
@@ -84,6 +92,10 @@ const Services = styled(About)`
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
+    @media(max-width: 1300px){
+        justify-content: center;
+    }
+    
     /* @media (max-width: 1500px) {
     justify-content: center;
   } */
